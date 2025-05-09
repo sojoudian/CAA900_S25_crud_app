@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple TODO App</title>
+</head>
+<body>
+    <h1>TODO List</h1>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            {{ todo.title }} - {{ todo.description }}
+            <a href="{{ url_for('edit', todo_id=todo._id) }}">Edit</a>
+            <a href="{{ url_for('delete', todo_id=todo._id) }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('create') }}">Add New TODO</a></p>
+</body>
+</html>

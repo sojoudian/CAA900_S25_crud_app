@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit TODO</title>
+</head>
+<body>
+    <h1>Edit TODO</h1>
+    <form method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="{{ todo.title }}" required><br><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description">{{ todo.description }}</textarea><br><br>
+        <input type="submit" value="Update">
+    </form>
+    <p><a href="{{ url_for('index') }}">Back to List</a></p>
+</body>
+</html>
